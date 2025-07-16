@@ -1,5 +1,9 @@
-deployment:
-  - name: blue
-    replicas: 1
-    color: blue
-    weight: 5
+ReplicaNumber: 3
+
+containers:
+  containerPort: 8080
+  image: 'quay.io/sbahar/workshop-lab'
+  tag: 'chart_v1'
+
+service:
+  servicePort: 8080
