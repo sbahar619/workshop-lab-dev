@@ -28,4 +28,7 @@ probes:
       successThreshold: 1
       failureThreshold: 3
 
+volume:
+  mount:
+    path: /tmp/html
 

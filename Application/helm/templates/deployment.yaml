@@ -36,7 +36,7 @@ spec:
             {{- tpl (toYaml .Values.probes.liveness.timeout) . | nindent 12 }}
           volumeMounts:
             - name: index-html
-              mountPath: /tmp/html
+              mountPath: {{ .Values.volume.mount.path }}
           terminationMessagePath: /dev/termination-log
           name: {{ .Chart.Name }}
           ports:
