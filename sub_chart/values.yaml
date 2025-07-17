@@ -35,3 +35,8 @@ subcharts:
   - alias: deploy2
     service:
       port: 8080
+
+github:
+  user: sbahar619
+  token: empty-pass
+  url: https://api.github.com/repos/sbahar619/workshop-lab-dev/issues
