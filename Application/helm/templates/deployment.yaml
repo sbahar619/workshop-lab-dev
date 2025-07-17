@@ -24,24 +24,16 @@ spec:
             value: {{ .Values.containers.containerPort | quote }}
           readinessProbe:
             httpGet:
-              path: /health/readiness
+              path: {{ .Values.probes.readiness.httpGet.path }}
               port: {{ .Values.containers.containerPort  }}
               scheme: HTTP
-            initialDelaySeconds: 1
-            timeoutSeconds: 1
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 3
+            {{- tpl (toYaml .Values.probes.readiness.timeout) . | nindent 12 }}
           livenessProbe:
             httpGet:
-              path: /health/liveliness
+              path: {{ .Values.probes.liveness.httpGet.path }}
               port: {{ .Values.containers.containerPort }}
               scheme: HTTP
-            initialDelaySeconds: 1
-            timeoutSeconds: 1
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 3
+            {{- tpl (toYaml .Values.probes.liveness.timeout) . | nindent 12 }}
           volumeMounts:
             - name: index-html
               mountPath: /tmp/html
