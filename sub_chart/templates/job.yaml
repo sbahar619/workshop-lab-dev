@@ -11,6 +11,7 @@ spec:
     metadata:
       name: test-url
     spec:
+      activeDeadlineSeconds: 15
       restartPolicy: Never
       containers:
       - name: test-url
