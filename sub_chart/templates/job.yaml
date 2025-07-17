@@ -23,6 +23,6 @@ spec:
           - name: SERVICE
             value: {{ .alias }}-service
           - name: PORT
-            value: "{{ .service.servicePort }}"
+            value: "{{ .service.port }}"
     backoffLimit: 1
 {{- end }}
