@@ -7,11 +7,11 @@ metadata:
     argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
   name: test-url
 spec:
+  activeDeadlineSeconds: 15
   template:
     metadata:
       name: test-url
     spec:
-      activeDeadlineSeconds: 15
       restartPolicy: Never
       containers:
       - name: test-url
