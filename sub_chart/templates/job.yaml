@@ -18,11 +18,13 @@ spec:
         image: registry.access.redhat.com/ubi8-minimal:8.7-1031
         workingDir: /workspace/output
         command: ["/bin/bash", "-c"]
-        args: ["curl ${SERVICE}:${PORT}/health/liveliness || exit 1"]
+        args: ["curl ${SERVICE}:${PORT}/health/liveliness | grep $TEST || exit 1"]
         env:
           - name: SERVICE
             value: {{ .alias }}-service
           - name: PORT
             value: "{{ .service.port }}"
+          - name: TEST
+            value: "{{ $.Values.test }}"
     backoffLimit: 1
 {{- end }}
