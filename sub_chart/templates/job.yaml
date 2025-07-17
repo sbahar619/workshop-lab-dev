@@ -1,3 +1,4 @@
+{{- range .Values.subcharts }}
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -21,5 +22,6 @@ spec:
           - name: SERVICE
             value: "deploy-service"
           - name: PORT
-            value: "{{ .Values.deploy.service.servicePort }}"
+            value: "{{ .service.servicePort }}"
     backoffLimit: 1
+{{- end }}

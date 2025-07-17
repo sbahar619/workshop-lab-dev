@@ -27,3 +27,11 @@ deploy2:
   argocd:
     syncwave:
       deployment: 10
+
+subcharts:
+  - alias: deploy1
+    service:
+      port: 8080
+  - alias: deploy2
+    service:
+      port: 8080
