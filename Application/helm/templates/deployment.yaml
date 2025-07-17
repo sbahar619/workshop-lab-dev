@@ -13,7 +13,6 @@ spec:
     metadata:
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/config-map.yaml") . | sha256sum }}
-        rollme: {{ randAlphaNum 10 | quote }}
       labels:
         app: {{ .Chart.Name }}
     spec:
