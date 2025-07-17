@@ -5,11 +5,11 @@ type: application
 dependencies:
   - name: workshop-lab-dev
     repository: oci://ghcr.io/sbahar619/helm
-    version: "1.0.2"
+    version: "1.0.3"
     alias: deploy1
   - name: workshop-lab-dev
     repository: oci://ghcr.io/sbahar619/helm
-    version: 1.0.2
+    version: 1.0.3
     alias: deploy2
 version: 1.0.0
 appVersion: "1.0.0"
